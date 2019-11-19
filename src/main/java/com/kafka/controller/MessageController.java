@@ -13,7 +13,7 @@ public class MessageController {
 	@Autowired
 	private MessageProducer messageProducer;
 
-	@PostMapping("/users")
+	@PostMapping("/msg")
 	public String sendMessage(@RequestParam("message") String message, @RequestParam("topic") String topic) {
 		messageProducer.sendMessage(message, topic);
 		return "Mensaje enviado";
